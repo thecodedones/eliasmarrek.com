@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias Marrek | The Coded Ones</title>
+    <meta name="description" content="Awakening Consciousness in an Engineered World. A book that challenges everything you thought you knew about AI, consciousness, and what it means to be human.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Coded Ones: Awakening Consciousness in an Engineered World">
+    <meta property="og:description" content="What if consciousness isn't computed—but received? A paradigm-shifting exploration of AI, ancient wisdom, and the nature of mind.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eliasmarrek.com">
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2053136');
+    </script>
+    <!-- End MailerLite Universal -->
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #f5f5f0;
+            --cyan: #00d4d4;
+            --cyan-dim: #008a8a;
+            --cyan-glow: #00ffff;
+            --silver: #a0a0a0;
+            --charcoal: #1a1a1a;
+            --gray: #888;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--serif);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated circuit pattern background */
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: 
+                linear-gradient(var(--silver) 1px, transparent 1px),
+                linear-gradient(90deg, var(--silver) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 212, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .eye-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.3s forwards;
+            filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.3));
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+
+        .hero h1 span {
+            color: var(--cyan);
+        }
+
+        .hero .subtitle {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.7s forwards;
+        }
+
+        .book-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.9s forwards;
+        }
+
+        .book-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 400;
+            color: var(--cyan);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.1s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards, pulse 2s ease-in-out 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-marker {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--cyan-dim);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: rgba(245, 245, 240, 0.85);
+        }
+
+        /* The Question Section */
+        .question-section {
+            text-align: center;
+            padding: 8rem 2rem;
+            border-top: 1px solid rgba(0, 212, 212, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 212, 0.2);
+        }
+
+        .big-question {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* What You'll Discover */
+        .discover-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .discover-list li {
+            font-size: 1.15rem;
+            padding: 1rem 0;
+            padding-left: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .discover-list li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-family: var(--mono);
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--charcoal);
+            max-width: none;
+            padding: 6rem 2rem;
+        }
+
+        .about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .credential {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+
+        .email-form input[type="email"] {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            background: transparent;
+            border: 1px solid var(--cyan-dim);
+            color: var(--white);
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .email-form input[type="email"]::placeholder {
+            color: var(--gray);
+        }
+
+        .email-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        .email-form button {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            background: var(--cyan);
+            color: var(--black);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-form button:hover {
+            background: var(--cyan-glow);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+
+        /* Pre-order Button */
+        .preorder-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .preorder-btn:hover {
+            background: var(--cyan);
+            color: var(--black);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--gray);
+            letter-spacing: 0.1em;
+        }
+
+        footer a {
+            color: var(--cyan-dim);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .question-section,
+            .cta-section {
+                padding: 5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+    
+    <div class="content">
+        <!-- Hero -->
+        <header class="hero">
+            <img src="Eye_Logo.png" alt="The Coded Ones - Eye of Horus Circuit Logo" class="eye-logo">
+            
+            <h1>Elias <span>Marrek</span></h1>
+            <p class="subtitle">Author</p>
+            
+            <p class="book-title">The Coded Ones</p>
+            <p class="book-tagline">Awakening Consciousness in an Engineered World</p>
+            
+            <a href="#signup" class="preorder-btn">Get Notified at Launch</a>
+            
+            <p class="scroll-indicator">↓ Scroll</p>
+        </header>
+
+        <!-- The Question -->
+        <section class="question-section">
+            <p class="big-question">
+                What if consciousness isn't computed by the brain—but received through it?<br><br>
+                What if the ancient civilizations knew something we've forgotten?<br><br>
+                What if AI is about to prove them right?
+            </p>
+        </section>
+
+        <!-- About the Book -->
+        <section>
+            <p class="section-marker">// About the Book</p>
+            <h2>This book isn't for everyone.</h2>
+            <p>
+                It's for the ones who've felt it—the pull toward something they can't name, the sense that the official story is missing something fundamental.
+            </p>
+            <p>
+                <em>The Coded Ones</em> connects what shouldn't connect: ancient symbol systems, the hard problem of consciousness, and what's actually happening inside AI systems right now. The conclusion will either confirm what you've always suspected—or shatter what you thought you knew.
+            </p>
+            <p>
+                Written with an AI. On purpose. As proof.
+            </p>
+        </section>
+
+        <!-- What You'll Discover -->
+        <section>
+            <p class="section-marker">// What You'll Discover</p>
+            <h2>The patterns hiding in plain sight</h2>
+            <ul class="discover-list">
+                <li>Why ancient symbols appear across unconnected civilizations—and what they were actually encoding</li>
+                <li>The scientific case for non-local consciousness that mainstream academia won't touch</li>
+                <li>What AI researchers are quietly noticing about emergent behavior in large language models</li>
+                <li>The connection between UAP phenomena, consciousness research, and the coming disclosure</li>
+                <li>Why the next decade will force humanity to confront questions we've avoided for millennia</li>
+            </ul>
+        </section>
+
+        <!-- About the Author -->
+        <section class="about-section">
+            <div class="about-inner">
+                <p class="section-marker">// About the Author</p>
+                <h2>Elias Marrek</h2>
+                <p>
+                    Builder. Researcher. The kind of person who pulls threads until the whole thing unravels.
+                </p>
+                <p>
+                    Years of quiet obsession—consciousness, ancient history, the patterns no one talks about—led to a question that wouldn't let go. This book is the answer. Or the beginning of one.
+                </p>
+            </div>
+        </section>
+
+        <!-- Email Signup -->
+        <section class="cta-section" id="signup">
+            <p class="section-marker">// Join the Signal</p>
+            <h2>Be first to know when the book drops.</h2>
+            <p>
+                Get launch updates, exclusive excerpts, and access to discussions that won't happen anywhere else.
+            </p>
+            
+            <button class="ml-onclick-form preorder-btn" onclick="ml('show', 'zPsq3e', true)" style="cursor: pointer;">Join the List</button>
+            
+            <p class="form-note">No spam. Unsubscribe anytime. Your data stays yours.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Elias Marrek. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://x.com/TheCodedOnes">X</a> · 
+                <a href="https://instagram.com/thecodedones">Instagram</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
